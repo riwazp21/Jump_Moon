@@ -56,6 +56,8 @@ public class Character : MonoBehaviour
         {
             isGrounded = true;
         }
+        
+
     }
 
     private void OnCollisionExit(Collision collision)
