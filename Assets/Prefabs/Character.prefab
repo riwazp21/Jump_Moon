@@ -113,6 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 10
+  platformPrefab: {fileID: 2424264668504313855, guid: 57cf27985f729473d9fb79c610637151, type: 3}
+  platformHeight: 1
+  MainCamera: {fileID: 0}
 --- !u!54 &9120212862190693308
 Rigidbody:
   m_ObjectHideFlags: 0
