@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Platform
   - Character
+  - HighScore
+  - CurrScore
   layers:
   - Default
   - TransparentFX
