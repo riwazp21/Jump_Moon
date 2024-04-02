@@ -37,7 +37,9 @@ public class MainCamera : MonoBehaviour
     float startY = lowestPlatformY - totalHeight / 2f;
     float xPos = Random.Range(minX, maxX);
     float yPos = startY + platformCount * platformGap; // Use platformGap here
-    GameObject platformToInstantiate = Random.value < movingPlatformProbability ? movingPlatformPrefab : platformPrefab;
+    float randomValue = Random.value;
+    Debug.Log(randomValue);
+    GameObject platformToInstantiate = randomValue < movingPlatformProbability ? movingPlatformPrefab : platformPrefab;
     Vector3 platformPosition = new Vector3(xPos, yPos, 0f);
     Instantiate(platformToInstantiate, platformPosition, Quaternion.identity);
     platformCount++;

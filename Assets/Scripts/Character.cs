@@ -13,6 +13,11 @@ public class Character : MonoBehaviour
     private Rigidbody rb;
     private bool isGrounded;
     private float minX, maxX;
+
+    private bool isFreefalling = false;
+    private float freefallTime = 0f;
+    private float freefallThreshold = 2f;
+
     public MainCamera MainCamera;
     
      
@@ -56,6 +61,37 @@ public class Character : MonoBehaviour
         {
             //SceneManager.LoadScene("EndScreen");
         }
+
+        if (IsFalling())
+        {
+            if (!isFreefalling)
+            {
+                // Start the freefall timer
+                isFreefalling = true;
+                freefallTime = 0f;
+            }
+            else
+            {
+                // Update the freefall timer
+                freefallTime += Time.deltaTime;
+
+                // Check if the freefall time has reached the threshold
+                if (freefallTime >= freefallThreshold)
+                {
+                    Debug.Log("Character has been in freefall for 5 seconds");
+                    SceneManager.LoadScene("EndScreen");
+
+                    // Do something when the character has been in freefall for 5 seconds
+                }
+            }
+        }
+        else
+        {
+            // Reset the freefall timer
+            isFreefalling = false;
+            freefallTime = 0f;
+        }
+
     }
 
 
@@ -72,6 +108,12 @@ public class Character : MonoBehaviour
         }
     }
 
+    private bool IsFalling()
+    {
+        // Check if the character's velocity in the y-axis is negative
+        return GetComponent<Rigidbody>().velocity.y < 0f;
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Platform"))
@@ -80,3 +122,6 @@ public class Character : MonoBehaviour
         }
     }
 }
+
+
+
