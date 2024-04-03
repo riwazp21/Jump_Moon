@@ -17,6 +17,8 @@ public class Character : MonoBehaviour
     private bool isFreefalling = false;
     private float freefallTime = 0f;
     private float freefallThreshold = 2f;
+    [SerializeField] private AudioClip jumpSFX;
+    [SerializeField] private AudioClip landingSFX;
 
     public MainCamera MainCamera;
     
@@ -53,6 +55,7 @@ public class Character : MonoBehaviour
         // Jump
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
+            SoundsFXManager.instance.PlaySoundFXClip(jumpSFX,transform,1f);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
@@ -103,6 +106,7 @@ public class Character : MonoBehaviour
             //if (MainCamera.platformCount <= 5)
             //{
             //MainCamera.GenerateOnePlatform();
+            SoundsFXManager.instance.PlaySoundFXClip(landingSFX,transform,1f);
             isGrounded = true;
             //}
         }

@@ -115,6 +115,8 @@ MonoBehaviour:
   jumpForce: 10
   platformPrefab: {fileID: 2424264668504313855, guid: 57cf27985f729473d9fb79c610637151, type: 3}
   platformHeight: 1
+  jumpSFX: {fileID: 8300000, guid: 501d90c7a9c9d4f48a6d1601cb4c3fee, type: 3}
+  landingSFX: {fileID: 8300000, guid: 9cdb8059760aba14f9ebc1c2f63aa44d, type: 3}
   MainCamera: {fileID: 0}
 --- !u!54 &9120212862190693308
 Rigidbody:
