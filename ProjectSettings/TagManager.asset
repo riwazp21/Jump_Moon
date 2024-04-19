@@ -8,6 +8,7 @@ TagManager:
   - Character
   - HighScore
   - CurrScore
+  - Spike
   layers:
   - Default
   - TransparentFX

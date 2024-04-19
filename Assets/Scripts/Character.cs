@@ -102,13 +102,17 @@ public class Character : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
-            // Instantiate a new platform above the current platform
-            //if (MainCamera.platformCount <= 5)
-            //{
-            //MainCamera.GenerateOnePlatform();
+          
+            // Align the character's x-position with the platform's x-position
+          
             SoundsFXManager.instance.PlaySoundFXClip(landingSFX,transform,1f);
             isGrounded = true;
             //}
+        }
+        if(collision.gameObject.CompareTag("Spike"))
+        {
+
+            SceneManager.LoadScene("EndScreen");
         }
     }
 
@@ -122,6 +126,7 @@ public class Character : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
+           // transform.SetParent(null);
             isGrounded = false;
         }
     }

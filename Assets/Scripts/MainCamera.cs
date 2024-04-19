@@ -5,6 +5,11 @@ public class MainCamera : MonoBehaviour
     public GameObject characterPrefab;
     public GameObject platformPrefab;
     public GameObject movingPlatformPrefab;
+
+    public GameObject gapPlatformPrefab;
+    public GameObject movingGapPrefab;
+    public GameObject spikePrefab;
+    public GameObject movingSpikePrefab;
     public float yOffset = 2f;
     private float platformGap = 6f;
 
@@ -31,15 +36,45 @@ public class MainCamera : MonoBehaviour
         //Character.OnPlatformLanded += OnPlatformLanded;
     }
 
-   public void GenerateOnePlatform()
+  public void GenerateOnePlatform()
 {
     float totalHeight = platformCount * platformGap;
     float startY = lowestPlatformY - totalHeight / 2f;
     float xPos = Random.Range(minX, maxX);
     float yPos = startY + platformCount * platformGap; // Use platformGap here
     float randomValue = Random.value;
-    Debug.Log(randomValue);
-    GameObject platformToInstantiate = randomValue < movingPlatformProbability ? movingPlatformPrefab : platformPrefab;
+    GameObject platformToInstantiate;
+
+    if (randomValue < 0.40f)
+    {
+        platformToInstantiate = platformPrefab;
+    }
+    else if (randomValue < 0.60f)
+    {
+        platformToInstantiate = movingPlatformPrefab;
+        // Set x-position to midpoint
+        xPos = (minX + maxX) / 2f;
+    }
+    else if (randomValue < 0.80f)
+    {
+        platformToInstantiate = gapPlatformPrefab;
+    }
+    else if (randomValue < 0.90f)
+    {
+
+        platformToInstantiate = movingGapPrefab;
+        xPos = (minX + maxX)/2f;
+    }
+    else if (randomValue < 0.95f)
+    {
+        platformToInstantiate = spikePrefab;
+    }
+    else
+    {
+        platformToInstantiate = movingSpikePrefab;
+        xPos = (minX + maxX)/2f;
+    }
+
     Vector3 platformPosition = new Vector3(xPos, yPos, 0f);
     Instantiate(platformToInstantiate, platformPosition, Quaternion.identity);
     platformCount++;
@@ -48,7 +83,14 @@ public class MainCamera : MonoBehaviour
 
     private void GeneratePlatforms()
     {
-        for (int i = 0; i<5; i++)
+    float totalHeight = platformCount * platformGap;
+    float startY = lowestPlatformY - totalHeight / 2f;
+    float xPos = Random.Range(minX, maxX);
+    float yPos = startY + platformCount * platformGap; // Use platformGap here
+    Vector3 platformPosition = new Vector3(xPos,yPos,0f);
+    Instantiate(platformPrefab,platformPosition,Quaternion.identity);
+    platformCount++;
+        for (int i = 0; i<4; i++)
         {
             GenerateOnePlatform();
         }

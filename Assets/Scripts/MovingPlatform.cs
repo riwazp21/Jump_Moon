@@ -4,25 +4,26 @@ public class MovingPlatform : MonoBehaviour
 {
     public float moveSpeed = 2f;
     public float moveRange = 5f; // Total range the platform can move
-    private float originalPosition;
+    private Vector3 originalPosition;
     private bool moveRight = true;
     private bool isCharacterOnTop = false;
 
     private void Start()
     {
-        originalPosition = transform.position.x;
+        originalPosition = transform.position;
     }
 
     private void Update()
     {
         // Calculate the new position based on the current direction
-        float newPosition = moveRight ? originalPosition + moveRange : originalPosition - moveRange;
+        float movement = moveSpeed * Time.deltaTime * (moveRight ? 1 : -1);
+        Vector3 newPosition = transform.position + new Vector3(movement, 0f, 0f);
 
         // Move the platform horizontally
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(newPosition, transform.position.y, transform.position.z), moveSpeed * Time.deltaTime);
+        transform.position = newPosition;
 
         // Change direction if the platform reaches the end of the range
-        if (Mathf.Abs(transform.position.x - originalPosition) >= moveRange)
+        if (Mathf.Abs(transform.position.x - originalPosition.x) >= moveRange)
         {
             moveRight = !moveRight;
         }
@@ -50,3 +51,4 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 }
+

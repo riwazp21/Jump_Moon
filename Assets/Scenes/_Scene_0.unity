@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1795,7 +1795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 9120212862190693253, guid: 517460a894a2d4b478d93cdca512c574, type: 3}
   platformPrefab: {fileID: 2424264668504313855, guid: 57cf27985f729473d9fb79c610637151, type: 3}
-  movingPlatformPrefab: {fileID: 4880573711437550108, guid: a1b6a09e504e3493987a6bad8c6efabc, type: 3}
+  movingPlatformPrefab: {fileID: 4940212496749627177, guid: f3aaa6d809dcf4e00b7258ff0758f928, type: 3}
   yOffset: 2
   platformNewGap: 4
   platformCount: 5
@@ -1867,7 +1867,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -202.9416, y: 171.19}
+  m_AnchoredPosition: {x: -782, y: 490}
   m_SizeDelta: {x: 318.1168, y: 45.605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1073417585
@@ -3133,7 +3133,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601799233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 110}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3142,7 +3142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 247.1241, y: 169.19}
+  m_AnchoredPosition: {x: 768, y: 490}
   m_SizeDelta: {x: 217.0104, y: 41.612}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601799235
@@ -3228,7 +3228,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.002319336, z: 0, w: 0}
+  m_margin: {x: 0, y: 0.002319336, z: 0, w: 25.352234}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
