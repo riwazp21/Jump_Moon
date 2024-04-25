@@ -1795,7 +1795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 9120212862190693253, guid: 517460a894a2d4b478d93cdca512c574, type: 3}
   platformPrefab: {fileID: 9074584169600349288, guid: 57cf27985f729473d9fb79c610637151, type: 3}
-  movingPlatformPrefab: {fileID: 4940212496749627177, guid: f3aaa6d809dcf4e00b7258ff0758f928, type: 3}
+  movingPlatformPrefab: {fileID: 6962913414190735528, guid: b16b23c35b6bbe14a9127e99abfe885f, type: 3}
   gapPlatformPrefab: {fileID: 4940212496749627177, guid: c1a4ea7615c8e4a449963930122d1c8b, type: 3}
   movingGapPrefab: {fileID: 4940212496749627177, guid: f3aaa6d809dcf4e00b7258ff0758f928, type: 3}
   spikePrefab: {fileID: 2424264668504313855, guid: dc743664cb9fa43f79cbf61f13bd9d0b, type: 3}
