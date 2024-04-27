@@ -55,7 +55,7 @@ public class Character : MonoBehaviour
         // Jump
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            SoundsFXManager.instance.PlaySoundFXClip(jumpSFX,transform,1f);
+            SoundsFXManager.instance.PlaySoundFXClip(jumpSFX,transform,2f);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
@@ -105,7 +105,7 @@ public class Character : MonoBehaviour
           
             // Align the character's x-position with the platform's x-position
           
-            SoundsFXManager.instance.PlaySoundFXClip(landingSFX,transform,1f);
+            SoundsFXManager.instance.PlaySoundFXClip(landingSFX,transform,1.5f);
             isGrounded = true;
             //}
         }
